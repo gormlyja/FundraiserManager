@@ -22,7 +22,7 @@ UI Specialist: Rahul Shakya and Binod Dahl <br>
 Business Logic / Persistence: Amin Vedant and Juan Lopez Rosado
 
 ## Project Link
-https://github.com/gormlyja/FundraiserManager
+https://github.com/gormlyja/FundraiserManager/projects/1
 
 ## Milestones
 
