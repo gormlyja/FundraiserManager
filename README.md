@@ -17,9 +17,12 @@ For the IT4045 Final Project, our group decided to make a fundraiser manager. Th
  
 ## Roles
  
-Devops/Product Owner/Scrum Master/GitHub Admin: Jacob Gormly
-UI Specialist: Rahul Shakya and Binod Dahl
+Devops/Product Owner/Scrum Master/GitHub Admin: Jacob Gormly <br>
+UI Specialist: Rahul Shakya and Binod Dahl <br>
 Business Logic / Persistence: Amin Vedant and Juan Lopez Rosado
+
+## Project Link
+https://github.com/gormlyja/FundraiserManager
 
 ## Milestones
 
