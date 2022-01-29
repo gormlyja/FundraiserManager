@@ -23,8 +23,4 @@ Business Logic / Persistence: Amin Vedant and Juan Lopez Rosado
 ## Project Link
 https://github.com/gormlyja/FundraiserManager/projects/1
 
-## Milestones
-
-
-
-*As a group, we have decided to meet Mondays at 6PM using Discord.*
+<br><br>*As a group, we have decided to meet Mondays at 6PM using Discord.*
