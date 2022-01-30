@@ -10,33 +10,33 @@ For the IT4045 Final Project, our group decided to make a fundraiser manager. Th
  As a user, I want to be able to see information about a fundraiser so that I can compare how much they have sold compared to other participants and see if / how many rewards they qualify for from the organizers. 
  
  Example 1 
-Given: A feed of fundraiser data are available 
-When: The user searches for a particular fundraiser (recognizable name)
-Then: The fundraiser app will return any results and save in view list
+<br>Given: A feed of fundraiser data are available 
+<br>When: The user searches for a particular fundraiser (recognizable name)
+<br>Then: The fundraiser app will return any results and save in view list
 
 
 Example 2 
-Given: Fundraiser data available 
-When: The user searches for “aaofdnoas” (not recognizable text)
-Then: The fundraiser app will not return any results and not save in view list 
+<br>Given: Fundraiser data available 
+<br>When: The user searches for “aaofdnoas” (not recognizable text)
+<br>Then: The fundraiser app will not return any results and not save in view list 
 
 
 Example 3 
-Given: The fundraiser app saved user’s searched fundraiser  
+<br>Given: The fundraiser app saved user’s searched fundraiser  
 When: The User clicks and views the fundraiser
-Then: The user will see how much they have sold compared to other participants
+<br>Then: The user will see how much they have sold compared to other participants
 
 
 Example 4 
-Given: The fundraiser app saved user’s searched fundraiser  
+<br>Given: The fundraiser app saved user’s searched fundraiser  
 When: The User clicks and views the fundraiser
-Then: The user will see how many rewards they qualify for from the organizers
+<br>Then: The user will see how many rewards they qualify for from the organizers
 
 
 Example 5 
-Given: The user has previous fundraisers in the view list 
-When: Some of the previous fundraisers have expired 
-Then: The user can select expired fundraiser and click delete button to remove from the view list.  
+<br>Given: The user has previous fundraisers in the view list 
+<br>When: Some of the previous fundraisers have expired 
+<br>Then: The user can select expired fundraiser and click delete button to remove from the view list.  
 ## Class Diagram
  
 ### Class Diagram Description
