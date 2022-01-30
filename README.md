@@ -7,8 +7,6 @@ For the IT4045 Final Project, our group decided to make a fundraiser manager. Th
 ## Storyboard
  
 ## Requirements
- 
-## Class Diagram
  As a user, I want to be able to see information about a fundraiser so that I can compare how much they have sold compared to other participants and see if / how many rewards they qualify for from the organizers. 
  
  Example 1 
@@ -39,7 +37,8 @@ Example 5
 Given: The user has previous fundraisers in the view list 
 When: Some of the previous fundraisers have expired 
 Then: The user can select expired fundraiser and click delete button to remove from the view list.  
-
+## Class Diagram
+ 
 ### Class Diagram Description
  
 ## JSON Schema
