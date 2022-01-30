@@ -5,6 +5,7 @@
 For the IT4045 Final Project, our group decided to make a fundraiser manager. The fundraiser manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about a fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify    for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
  
 ## Storyboard
+[Storyboard link](https://projects.invisionapp.com/prototype/ckz1rgk2l001sz5011jn42gmr/play)
  
 ## Requirements
  As a user, I want to be able to see information about a fundraiser so that I can compare how much they have sold compared to other participants and see if / how many rewards they qualify for from the organizers. 
