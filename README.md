@@ -39,7 +39,7 @@ Example 5
 <br>When: Some of the previous fundraisers have expired 
 <br>Then: The user can select expired fundraiser and click delete button to remove from the view list.  
 ## Class Diagram
- 
+ ![Alt text](/relative/path/to/capture.jpg?raw=true "Optional Title")
 ### Class Diagram Description
  
 ## JSON Schema
