@@ -39,9 +39,15 @@ Example 5
 <br>When: Some of the previous fundraisers have expired 
 <br>Then: The user can select expired fundraiser and click delete button to remove from the view list.  
 ## Class Diagram
- ![Alt text](/relative/path/to/capture.jpg?raw=true "Optional Title")
-### Class Diagram Description
+ ![Class Diagram](/Capture.jpg?raw=true "Class Diagram")
  
+### Class Diagram Description
+IFundraiserEntryService - Interface declaring all necessary methods for FundraiserEntry related functionality.
+FundraiserEntryService - Contains implementation for all mentods in IFundraiserEntryService
+FundraiserEntryServiceStub - Implements IFundraiserEntryService's methods with hardcoded return values for initial ui development
+FundraiserEntry - carries FundraiserEntry data between processes
+IFundraiserEntryDAO - Interface declaring the methods needed for FundraiserEntry's data access object
+FundraiserEntryDAO - Implements IFundraiserEntryDAO allowing access to FundraiserEntry records in the database
 ## JSON Schema
  
 ## Roles
