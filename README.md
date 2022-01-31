@@ -49,6 +49,18 @@ IFundraiserEntryService - Interface declaring all necessary methods for Fundrais
 <br>IFundraiserEntryDAO - Interface declaring the methods needed for FundraiserEntry's data access object
 <br>FundraiserEntryDAO - Implements IFundraiserEntryDAO allowing access to FundraiserEntry records in the database
 ## JSON Schema
+This is what we plan to export to another app.
+
+>{
+>    "fundraiser": {
+>        "id": "123456",
+>        "title": "Girl Scout Cookie Sale",
+>        "username": "sampleusername",
+>        "description": "Fundraiser description",
+>        "imageURL": "Sample URL"
+>    }
+>    
+>}
  
 ## Roles
  
