@@ -58,9 +58,7 @@ This is what we plan to export to another app.
 >        "username": "sampleusername",
 >        "description": "Fundraiser description",
 >        "imageURL": "Sample URL"
->    }
->    
->}
+>    }}
  
 ## Roles
  
