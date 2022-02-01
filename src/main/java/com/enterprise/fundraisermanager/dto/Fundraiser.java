@@ -8,10 +8,11 @@ import java.util.Calendar;
 
 public @Data
 class Fundraiser {
-    private int id;
+    private Integer id;
     private String name;
     private String description;
     private Image homeImage;
+    private Goal goal;
     private ArrayList<Tier> tiers;
     private Calendar startDate;
     private Calendar endDate;
