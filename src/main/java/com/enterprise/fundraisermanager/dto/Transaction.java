@@ -1,4 +1,7 @@
 package com.enterprise.fundraisermanager.dto;
 
-public class Transaction {
+import lombok.Data;
+
+public @Data
+class Transaction {
 }

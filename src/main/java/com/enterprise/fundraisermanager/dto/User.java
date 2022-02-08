@@ -1,4 +1,7 @@
 package com.enterprise.fundraisermanager.dto;
 
-public class User {
+import lombok.Data;
+
+public @Data
+class User {
 }

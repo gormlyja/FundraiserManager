@@ -1,6 +1,9 @@
 package com.enterprise.fundraisermanager.dto;
 
-public class Goal {
+import lombok.Data;
+
+public @Data
+class Goal {
     private String name;
     private String description;
     private Double goalAmount;
