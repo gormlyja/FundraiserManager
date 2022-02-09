@@ -3,7 +3,6 @@ package com.enterprise.fundraisermanager.service;
 import com.enterprise.fundraisermanager.dao.IFundraiserDAO;
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
