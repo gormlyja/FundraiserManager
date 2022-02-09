@@ -27,6 +27,11 @@ public class FundraiserServiceStub implements IFundraiserService{
     }
 
     @Override
+    public void delete(int id) throws Exception {
+        fundraiserDAO.delete(id);
+    }
+
+    @Override
     public Fundraiser save(Fundraiser fundraiser) throws Exception{
         return fundraiserDAO.save(fundraiser);
     }

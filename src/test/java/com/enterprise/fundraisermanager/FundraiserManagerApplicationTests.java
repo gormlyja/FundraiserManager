@@ -30,8 +30,16 @@ class FundraiserManagerApplicationTests {
     @Test
     void fetchFundraiserByID_returnsCookieSaleForID12345() throws Exception{
         givenFundraiserDataAreAvailable();
+        whenFundraiser12345AddedIsCookieSale();
         whenSearchFundraiserWithID12345();
         thenReturnOneCookieSaleForId12345();
+    }
+
+    private void whenFundraiser12345AddedIsCookieSale() {
+        Fundraiser Troop451CookieSale = new Fundraiser();
+        Troop451CookieSale.setId(12345);
+        Troop451CookieSale.setDescription("Girl Scout Cookie Fundraiser for Troop 451");
+        Mockito.when(fundraiserDAO.fetch(12345)).thenReturn(Troop451CookieSale);
     }
 
     private void givenFundraiserDataAreAvailable() throws Exception{

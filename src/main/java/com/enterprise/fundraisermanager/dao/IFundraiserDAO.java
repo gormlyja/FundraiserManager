@@ -8,4 +8,8 @@ public interface IFundraiserDAO {
     Fundraiser save(Fundraiser fundraiser) throws Exception;
 
     List<Fundraiser> fetchAll();
+
+    Fundraiser fetch(int id);
+
+    void delete(int id);
 }

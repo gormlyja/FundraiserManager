@@ -11,6 +11,8 @@ public interface IFundraiserService {
      */
     Fundraiser fetchById(int id);
 
+    void delete(int id) throws Exception;
+
     Fundraiser save(Fundraiser fundraiser) throws Exception;
 
     List<Fundraiser> fetchAll();

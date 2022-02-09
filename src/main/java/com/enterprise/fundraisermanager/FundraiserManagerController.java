@@ -2,7 +2,9 @@ package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +32,11 @@ public class FundraiserManagerController {
     }
 
     @GetMapping("/fundraiser/{id}/")
-    public ResponseEntity fetchFundraiserByID(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
+    public ResponseEntity fetchFundraiserByID(@PathVariable("id") Integer id) {
+        Fundraiser foundFundraiser = fundraiserService.fetchById(id);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity(foundFundraiser, headers, HttpStatus.OK);
     }
 
     @PostMapping(value="/fundraiser", consumes="application/json", produces = "application/json")
@@ -46,8 +51,14 @@ public class FundraiserManagerController {
     }
 
     @DeleteMapping("/fundraiser/{id}/")
-    public ResponseEntity deleteFundraiser(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
+    public ResponseEntity deleteFundraiser(@PathVariable("id") Integer id) {
+        try {
+            fundraiserService.delete(id);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            //TODO confirm correct response in catch, or modify it to be correct response.
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 
