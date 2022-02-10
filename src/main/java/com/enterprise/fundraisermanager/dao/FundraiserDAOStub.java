@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class SpecimenDAOStub implements IFundraiserDAO{
+public class FundraiserDAOStub implements IFundraiserDAO{
 
     Map<Integer, Fundraiser> allFundraisers = new HashMap<>();
 
