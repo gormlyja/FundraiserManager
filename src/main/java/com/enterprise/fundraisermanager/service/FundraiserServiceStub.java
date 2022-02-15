@@ -40,4 +40,10 @@ public class FundraiserServiceStub implements IFundraiserService{
     public List<Fundraiser> fetchAll() {
         return fundraiserDAO.fetchAll();
     }
+
+    /**
+     * Any methods not included in lecture. TODO Remove this later in project
+     *
+     * @param fundraiser
+     */
 }

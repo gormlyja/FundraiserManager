@@ -1,6 +1,7 @@
 package com.enterprise.fundraisermanager.service;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
+
 import java.util.List;
 
 public interface IFundraiserService {
