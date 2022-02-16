@@ -15,7 +15,7 @@ class Fundraiser {
     private String description;
     private Image homeImage;
     private Goal goal;
-    private Integer tierId;
+    private ArrayList<Tier> tierList;
     private Calendar startDate;
     private Calendar endDate;
     private Double totalFundraised;
