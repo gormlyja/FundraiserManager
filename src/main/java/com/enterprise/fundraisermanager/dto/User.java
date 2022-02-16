@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public @Data
 class User {
-    private Integer Id;
+    private Integer userId;
     private String username;
     private String password;
     private String firstName;
