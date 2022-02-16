@@ -19,5 +19,5 @@ class Fundraiser {
     private Calendar startDate;
     private Calendar endDate;
     private Double totalFundraised;
-    private HashMap<Integer, User> userMap;
+    private HashMap<Integer, FundraiserUser> userMap;
 }
