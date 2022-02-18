@@ -61,5 +61,10 @@ public class FundraiserManagerController {
         }
     }
 
+    @GetMapping("/fundraisers")
+    public ResponseEntity searchFundraisers(@RequestParam(value = "searchTerm", required = false, defaultValue = "None") String searchTerm) {
+        String newSearchTerm = searchTerm + " ";
+        return new ResponseEntity(HttpStatus.OK);
+    }
 
 }
