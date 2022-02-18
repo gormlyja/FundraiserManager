@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -21,7 +22,13 @@ public class FundraiserManagerController {
      * @return start page
      */
     @RequestMapping("/")
-    public String index(){
+    public String index(Model model){
+        Fundraiser fundraiser= new Fundraiser();
+        fundraiser.setName("Girls Scout Cookies");
+        fundraiser.setDescription("These are cookies sold by the girl's scout");
+        fundraiser.setTotalFundraised(3050.00);
+        fundraiser.setId(1003);
+        model.addAttribute(fundraiser);
         return "start";
     }
 

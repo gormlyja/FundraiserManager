@@ -12,20 +12,34 @@
 
 </head>
 <body>
-<header>
     <div th:replace="fragments/topnav :: navbar">
 
     </div>
-
     <!---Todo: needs a DAO --->
-    <form id="form">
-        <input type="search" id="query" name="q" placeholder="Search...">
-        <button>Search</button>
-    </form>
-
     <p>
         Welcome to Fundraiser Manager! The Fundraiser Manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about the fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
     </p>
-</header>
+    <p th:text="${fundraiser}" />
+<!--    <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">-->
+<!--        <div class="input-group input-group-sm mb-3">-->
+<!--            <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>-->
+<!--            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">-->
+<!--        </div>-->
+<!--        <div class="input-group input-group-sm mb-3">-->
+<!--            <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>-->
+<!--            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">-->
+<!--        </div>-->
+<!--        <div class="input-group input-group-sm mb-3">-->
+<!--            <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>-->
+<!--            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundsRaised}">-->
+<!--        </div>-->
+<!--        <div class="input-group input-group-sm mb-3">-->
+<!--            <span class="input-group-text" id="fundraiserId">Fundraiser ID</span>-->
+<!--            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserId" th:field="*{plantId}" >-->
+<!--        </div>-->
+
+<!--        <button name="submit" type="submit" value="0">Submit</button>-->
+<!--    </form>-->
+
 </body>
 </html>

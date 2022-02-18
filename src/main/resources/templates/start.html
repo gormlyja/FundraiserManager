@@ -12,20 +12,15 @@
 
 </head>
 <body>
-<header>
     <div th:replace="fragments/topnav :: navbar">
 
     </div>
-
     <!---Todo: needs a DAO --->
-    <form id="form">
-        <input type="search" id="query" name="q" placeholder="Search...">
-        <button>Search</button>
-    </form>
-
     <p>
         Welcome to Fundraiser Manager! The Fundraiser Manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about the fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
     </p>
-</header>
+    <p th:text="${fundraiser}" />
+
+
 </body>
 </html>
