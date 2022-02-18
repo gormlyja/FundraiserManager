@@ -32,6 +32,17 @@ public class FundraiserManagerController {
         return "start";
     }
 
+    @RequestMapping("/saveFundraiser")
+    public String saveFundraiser(Fundraiser fundraiser){
+        try {
+            fundraiserService.save(fundraiser);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "start";
+        }
+        return "start";
+    }
+
     @GetMapping("/fundraiser")
     @ResponseBody
     public List<Fundraiser> fetchAllFundraisers() {

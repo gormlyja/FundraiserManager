@@ -21,6 +21,26 @@
     </p>
     <p th:text="${fundraiser}" />
 
+    <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="fundraiserId">Fundraiser ID</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserId" th:field="*{id}" >
+        </div>
+
+        <button name="submit" type="submit" value="0">Submit</button>
+    </form>
 
 </body>
 </html>
