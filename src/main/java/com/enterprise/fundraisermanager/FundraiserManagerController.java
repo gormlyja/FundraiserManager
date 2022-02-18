@@ -85,4 +85,13 @@ public class FundraiserManagerController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    /**
+     * Handle the members endpoint and return the members page.
+     * @return start page
+     */
+    @RequestMapping("/members")
+    public String members(){
+
+        return "members";
+    }
 }
