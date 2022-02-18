@@ -87,7 +87,7 @@ public class FundraiserManagerController {
 
     /**
      * Handle the members endpoint and return the members page.
-     * @return start page
+     * @return members page
      */
     @RequestMapping("/members")
     public String members(){
