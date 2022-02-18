@@ -5,65 +5,28 @@
     <title>Fundraisers</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<header>
+    <h1>
+        Fundraiser Manager
+    </h1>
+
+    <div class="topnav">
+        <a href="start.html">Home</a>
+        <a href="Members.html">Members</a>
+        <a href="Fundraisers.html">Fundraiser</a>
+    </div>
+
+    //Todo: needs a DAO
+    <form id="form">
+        <input type="search" id="query" name="q" placeholder="Search...">
+        <button>Search</button>
+    </form>
+</header>
 <body>
     <div class ="container">
         <h1>Rewards</h1>
 
-        <div id ="reward1-screen">
-            <h2>Earnable Tier 1 Rewards</h2>
-            <table>
-                <tr>
-                <td>
-                    Tier 1 Redeemable Rewards
-                    <ul>
-                        <li>Ipad</li>
-                        <li>Airpods</li>
-                        <li>Beats Headphones</li>
-                        <li>Dell Laptop</li>
-                        <li>Gift Cards</li>
-                    </ul>
-                </td>
-                    <h2>Tier 1 Information</h2>
-                    <form id="tier1-form">
-                        <label for="funName">Fundraiser name: </label>
-                        <input type="text" id="funName" name="funName"><br><br>
-                        <label for="funDesc">Fundraiser Description: </label>
-                        <input type="text" id="funDesc" name="funDesc"><br><br>
-                        <label for="amtRequired">Amount Required for reward: </label>
-                        <input type="text" id="amtRequired" name="amtRequired"><br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </tr>
-            </table>
-        </div>
-
-        <div id ="reward2-screen">
-            <h2>Earnable Tier 2 Rewards</h2>
-            <table>
-                <tr>
-                    <td>
-                        Tier 2 Redeemable Rewards
-                        <ul>
-                            <li>Apple Watch</li>
-                            <li>Apple TV</li>
-                            <li>Microwave Oven</li>
-                            <li>Air Fryer</li>
-                            <li>3 Month Spotify Membership</li>
-                        </ul>
-                    </td>
-                    <h2>Tier 1 Information</h2>
-                    <form id="tier2-form">
-                        <label for="fun2Name">Fundraiser name: </label>
-                        <input type="text" id="fun2Name" name="fun2Name"><br><br>
-                        <label for="fun2Desc">Fundraiser Description: </label>
-                        <input type="text" id="fun2Desc" name="fun2Desc"><br><br>
-                        <label for="amtRequired2">Amount Required for reward: </label>
-                        <input type="text" id="amtRequired2" name="amtRequired2"><br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </tr>
-            </table>
-        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX7YN7ydBMKy7GM52M45M4HUV2Mn_J567UNQ&usqp=CAU" alt="Fundraiser Placeholder" width="300" height="200">
 
         <div id ="reward3-screen">
             <h2>Earnable Tier 3 Rewards</h2>
@@ -83,8 +46,11 @@
                     <form id="tier3-form">
                         <label for="fun3Name">Fundraiser name: </label>
                         <input type="text" id="fun3Name" name="fun3Name"><br><br>
+                        <p>Fundraiser Name: Help the Children</p>
                         <label for="fun3Desc">Fundraiser Description: </label>
                         <input type="text" id="fun3Desc" name="fun3Desc"><br><br>
+                        <p>Fundraiser Description: Help the Children is a fundraiser that will be working</p>
+                        <p>toward helping children in third-world countries.</p>
                         <label for="amtRequired3">Amount Required for reward: </label>
                         <input type="text" id="amtRequired3" name="amtRequired3"><br><br>
                         <input type="submit" value="Submit">
