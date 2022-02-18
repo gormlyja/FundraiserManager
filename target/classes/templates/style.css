@@ -1,0 +1,17 @@
+body {
+    background-color: aqua;
+}
+h1 {
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    color: rebeccapurple;
+    text-align: justify;
+}
+
+table, th, td {
+    border: 1px solid darkblue;
+    border-collapse: collapse;
+}
