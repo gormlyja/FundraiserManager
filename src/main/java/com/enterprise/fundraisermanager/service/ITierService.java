@@ -13,5 +13,5 @@ public interface ITierService {
 
     Tier save(Tier tier) throws Exception;
 
-    List<Tier> fetchAll();
+    List<Tier> fetchAll()throws Exception;
 }
