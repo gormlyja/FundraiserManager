@@ -1,11 +1,11 @@
 package com.enterprise.fundraisermanager.dto;
 
 import lombok.Data;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public @Data
 class Fundraiser {

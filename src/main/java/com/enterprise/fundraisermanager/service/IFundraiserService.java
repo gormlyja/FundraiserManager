@@ -7,6 +7,7 @@ import java.util.List;
 public interface IFundraiserService {
     /**
      * Fetch a fundraiser with given ID.
+     *
      * @param id a unique identifier for a fundraiser.
      * @return the matching specimen, or null if no matches found.
      */
