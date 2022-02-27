@@ -1,0 +1,20 @@
+body {
+}
+h1 {
+    color: black;
+}
+
+h2 {
+    color: rebeccapurple;
+    text-align: justify;
+}
+
+table, th, td {
+    border: 1px solid darkblue;
+    border-collapse: collapse;
+}
+
+#footer {
+    position:fixed;
+    bottom:0;
+}
