@@ -94,4 +94,5 @@ public class FundraiserManagerController {
 
         return "members";
     }
+
 }

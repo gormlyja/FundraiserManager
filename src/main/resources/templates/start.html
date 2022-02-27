@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Fundraiser Manager</title>
@@ -9,45 +9,43 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/site.css">
 
 </head>
-<body>
-<h1>Fundraiser Manager</h1>
-    <!---<div th:replace="fragments/topnav :: navbar">
-    </div> -->
-    <div class="topnav">
-        <a href="start.html">Home</a>
-        <a href="members.html">Members</a>
-        <a href="fundraisers.html">Fundraiser</a>
+
+<header>
+    <div th:replace="fragments/topnav :: navbar" >
+
     </div>
+</header>
+
+<body>
+<div class="container-fluid col-md-6">
+<h1 class="display-1">Fundraiser Manager</h1>
+
     <br/>
     <!---Todo: needs a DAO -->
-    <p>
+    <p class="lead">
         Welcome to Fundraiser Manager! The Fundraiser Manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about the fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
     </p>
     <br/>
 
-    <h2>Example Fundraiser Creation Form</h2>
+    <h1 class="display-4">Example Fundraiser JSON Object</h1>
 
     <p th:text="${fundraiser}" />
 
-    <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
-        </div>
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
-        </div>
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
-        </div>
+    <h2 class="display-4">Example Fundraiser Creation Form</h2>
 
+    <div th:replace="fragments/fundraiser_form :: create" >
 
-        <button name="submit" type="submit" value="0">Submit</button>
-    </form>
+    </div>
+
+</div>
 
 </body>
+
+<div th:replace="fragments/footer :: footer" >
+
+</div>
+
 </html>
