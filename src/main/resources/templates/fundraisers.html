@@ -38,16 +38,9 @@
             <li>Printer</li>
             <li>Phone Accessories</li>
         </ul>
-        <h2>Tier Creation Form</h2>
-        <form id="tier3-form">
-            <label for="tierName">Tier name: </label>
-            <input type="text" id="tierName" name="fun3Name"><br><br>
-            <label for="tierDesc">Tier Description: </label>
-            <input type="text" id="tierDesc" name="fun3Desc"><br><br>
-            <label for="amtRequired3">Amount Required for reward: </label>
-            <input type="text" id="amtRequired3" name="amtRequired3"><br><br>
-            <input type="submit" value="Submit">
-        </form>
+        <div th:replace="fragments/tier_form :: create">
+
+        </div>
     </div>
 </div>
 

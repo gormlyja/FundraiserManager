@@ -1,6 +1,7 @@
 package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
+import com.enterprise.fundraisermanager.dto.Tier;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,15 @@ public class FundraiserManagerController {
         fundraiser.setDescription("These are cookies sold by the girl's scout");
         fundraiser.setTotalFundraised(3050.00);
         fundraiser.setId(1003);
+
+        Tier tier = new Tier();
+        tier.setName("Sample Tier Name");
+        tier.setDescription("Sample Tier Description");
+        tier.setRequiredAmount(500.00);
+        tier.setTierId(1);
+
         model.addAttribute(fundraiser);
+        model.addAttribute(tier);
         return "start";
     }
 
