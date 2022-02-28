@@ -13,7 +13,7 @@ public class TierServiceStub implements ITierService {
     private ITierDAO tierDAO;
 
     public TierServiceStub() {
-}
+    }
 
     public TierServiceStub(ITierDAO tierDAO) {
         this.tierDAO = tierDAO;
@@ -35,7 +35,6 @@ public class TierServiceStub implements ITierService {
         return tierList.get(0);
 
 
-
     }
 
     @Override
@@ -44,7 +43,7 @@ public class TierServiceStub implements ITierService {
     }
 
     @Override
-    public Tier save(Tier tier) throws Exception{
+    public Tier save(Tier tier) throws Exception {
         return tierDAO.save(tier);
     }
 

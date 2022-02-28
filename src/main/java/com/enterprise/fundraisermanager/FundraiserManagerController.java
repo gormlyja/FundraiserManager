@@ -1,6 +1,7 @@
 package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
+import com.enterprise.fundraisermanager.dto.Tier;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -8,8 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
@@ -19,21 +20,30 @@ public class FundraiserManagerController {
 
     /**
      * Handle the root (/) endpoint and return a start page.
+     *
      * @return start page
      */
     @RequestMapping("/")
-    public String index(Model model){
-        Fundraiser fundraiser= new Fundraiser();
+    public String index(Model model) {
+        Fundraiser fundraiser = new Fundraiser();
         fundraiser.setName("Girls Scout Cookies");
         fundraiser.setDescription("These are cookies sold by the girl's scout");
         fundraiser.setTotalFundraised(3050.00);
         fundraiser.setId(1003);
+
+        Tier tier = new Tier();
+        tier.setName("Sample Tier Name");
+        tier.setDescription("Sample Tier Description");
+        tier.setRequiredAmount(500.00);
+        tier.setTierId(1);
+
         model.addAttribute(fundraiser);
+        model.addAttribute(tier);
         return "start";
     }
 
     @RequestMapping("/saveFundraiser")
-    public String saveFundraiser(Fundraiser fundraiser){
+    public String saveFundraiser(Fundraiser fundraiser) {
         try {
             fundraiserService.save(fundraiser);
         } catch (Exception e) {
@@ -57,12 +67,12 @@ public class FundraiserManagerController {
         return new ResponseEntity(foundFundraiser, headers, HttpStatus.OK);
     }
 
-    @PostMapping(value="/fundraiser", consumes="application/json", produces = "application/json")
+    @PostMapping(value = "/fundraiser", consumes = "application/json", produces = "application/json")
     public Fundraiser createFundraiser(@RequestBody Fundraiser fundraiser) {
         Fundraiser newFundraiser = null;
         try {
             newFundraiser = fundraiserService.save(fundraiser);
-        }catch (Exception e) {
+        } catch (Exception e) {
             //TODO add logging
         }
         return newFundraiser;
@@ -87,11 +97,13 @@ public class FundraiserManagerController {
 
     /**
      * Handle the members endpoint and return the members page.
+     *
      * @return members page
      */
     @RequestMapping("/members")
-    public String members(){
+    public String members() {
 
         return "members";
     }
+
 }

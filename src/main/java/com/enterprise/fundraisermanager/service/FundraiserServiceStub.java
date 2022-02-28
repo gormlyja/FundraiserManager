@@ -3,10 +3,11 @@ package com.enterprise.fundraisermanager.service;
 import com.enterprise.fundraisermanager.dao.IFundraiserDAO;
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class FundraiserServiceStub implements IFundraiserService{
+public class FundraiserServiceStub implements IFundraiserService {
 
     private IFundraiserDAO fundraiserDAO;
 
@@ -32,7 +33,7 @@ public class FundraiserServiceStub implements IFundraiserService{
     }
 
     @Override
-    public Fundraiser save(Fundraiser fundraiser) throws Exception{
+    public Fundraiser save(Fundraiser fundraiser) throws Exception {
         return fundraiserDAO.save(fundraiser);
     }
 
