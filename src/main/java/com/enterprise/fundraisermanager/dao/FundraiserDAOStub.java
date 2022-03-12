@@ -19,7 +19,7 @@ public class FundraiserDAOStub implements IFundraiserDAO{
     }
 
     @Override
-    public List<Fundraiser> fetchAll() {
+    public List<Fundraiser> fetchAll()  {
         List<Fundraiser> returnFundraisers = new ArrayList<>(allFundraisers.values());
         return returnFundraisers;
     }

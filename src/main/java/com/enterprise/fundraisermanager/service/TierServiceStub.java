@@ -3,14 +3,25 @@ package com.enterprise.fundraisermanager.service;
 import com.enterprise.fundraisermanager.dao.ITierDAO;
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.dto.Tier;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * This class determines the application's boundary.
+ * It is a set of feasible operations from the perspective of interfacing client layers.
+ * It contains the application's business logic, manages transactions, and coordinates responses during operation execution.
+ * Implements ITierService's methods
+ * @author
+ */
 @Service
 public class TierServiceStub implements ITierService {
-    private ITierDAO tierDAO;
+
+
+    @Autowired
+    ITierDAO tierDAO;
 
     public TierServiceStub() {
 }
@@ -21,24 +32,11 @@ public class TierServiceStub implements ITierService {
 
     @Override
     public Tier fetchById(int tierId, Fundraiser fundraiser) {
-        Tier tier = new Tier();
-        tier.setDescription("");
-
-        Tier newTier = new Tier();
-        newTier.setName("Tier 1");
-        newTier.setRequiredAmount(5.00);
-
-        ArrayList<Tier> tierList = new ArrayList<>();
-        tierList.add(0, newTier);
-        fundraiser.setTierList(tierList);
-
-        return tierList.get(0);
-
-
-
+        return tierDAO.fetch(tierId);
     }
 
     @Override
+    @Cacheable(value="delete", key ="#tierId")
     public void delete(int tierId) throws Exception {
         tierDAO.delete(tierId);
     }
@@ -49,13 +47,9 @@ public class TierServiceStub implements ITierService {
     }
 
     @Override
-    public List<Tier> fetchAll() {
+    public List<Tier> fetchAll() throws Exception {
+
         return tierDAO.fetchAll();
     }
 
-    /**
-     * Any methods not included in lecture. TODO Remove this later in project
-     *
-     * @param fundraiser
-     */
 }
