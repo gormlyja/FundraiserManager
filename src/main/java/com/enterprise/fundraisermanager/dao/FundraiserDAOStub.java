@@ -7,6 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The DAO provides Fundraiser data to the service layer.
+ * <p>
+ * This class provides non-persistent Fundraiser data, and is used before data can be retrieved from database.
+ * </p>
+ */
 @Repository
 public class FundraiserDAOStub implements IFundraiserDAO{
 
