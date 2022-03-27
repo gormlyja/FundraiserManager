@@ -2,6 +2,7 @@ package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * The controller class provides HTTP endpoints that return either HTML pages or JSON data
+ */
 @Controller
 public class FundraiserManagerController {
 
+    @Autowired
     IFundraiserService fundraiserService;
 
     /**
@@ -32,6 +37,11 @@ public class FundraiserManagerController {
         return "start";
     }
 
+    /**
+     * Endpoint to save Fundraiser.
+     * @param fundraiser
+     * @return start page
+     */
     @RequestMapping("/saveFundraiser")
     public String saveFundraiser(Fundraiser fundraiser){
         try {
@@ -43,12 +53,21 @@ public class FundraiserManagerController {
         return "start";
     }
 
+    /**
+     * Endpoint provides all fundraiser as JSON.
+     * @return List<Fundraiser>
+     */
     @GetMapping("/fundraiser")
     @ResponseBody
     public List<Fundraiser> fetchAllFundraisers() {
         return fundraiserService.fetchAll();
     }
 
+    /**
+     * Endpoint provides a fundraiser filtered by id.
+     *  @param id
+     * @return ResponseEntity
+     */
     @GetMapping("/fundraiser/{id}/")
     public ResponseEntity fetchFundraiserByID(@PathVariable("id") Integer id) {
         Fundraiser foundFundraiser = fundraiserService.fetchById(id);
@@ -57,6 +76,11 @@ public class FundraiserManagerController {
         return new ResponseEntity(foundFundraiser, headers, HttpStatus.OK);
     }
 
+    /**
+     * Endpoint to create a new fundraiser.
+     * @param fundraiser
+     * @return newFundraiser
+     */
     @PostMapping(value="/fundraiser", consumes="application/json", produces = "application/json")
     public Fundraiser createFundraiser(@RequestBody Fundraiser fundraiser) {
         Fundraiser newFundraiser = null;
@@ -68,6 +92,11 @@ public class FundraiserManagerController {
         return newFundraiser;
     }
 
+    /**
+     * Endpoint to delete a fundraiser.
+     * @param id
+     * @return ResponseEntity
+     */
     @DeleteMapping("/fundraiser/{id}/")
     public ResponseEntity deleteFundraiser(@PathVariable("id") Integer id) {
         try {
@@ -79,6 +108,11 @@ public class FundraiserManagerController {
         }
     }
 
+    /**
+     * Endpoint to handle search.
+     * @param searchTerm
+     * @return ResponseEntity
+     */
     @GetMapping("/fundraisers")
     public ResponseEntity searchFundraisers(@RequestParam(value = "searchTerm", required = false, defaultValue = "None") String searchTerm) {
         String newSearchTerm = searchTerm + " ";
@@ -91,7 +125,6 @@ public class FundraiserManagerController {
      */
     @RequestMapping("/members")
     public String members(){
-
         return "members";
     }
 }

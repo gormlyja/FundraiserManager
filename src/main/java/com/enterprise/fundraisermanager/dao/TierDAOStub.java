@@ -1,6 +1,5 @@
 package com.enterprise.fundraisermanager.dao;
 
-import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.dto.Tier;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;

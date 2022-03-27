@@ -2,12 +2,17 @@ package com.enterprise.fundraisermanager.service;
 
 import com.enterprise.fundraisermanager.dao.IFundraiserDAO;
 import com.enterprise.fundraisermanager.dto.Fundraiser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+/**
+ * The service handles business logic and provides fundraiser data to the controller
+ */
 @Service
 public class FundraiserServiceStub implements IFundraiserService{
 
+    @Autowired
     private IFundraiserDAO fundraiserDAO;
 
     public FundraiserServiceStub() {
