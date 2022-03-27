@@ -12,16 +12,9 @@
 
 </head>
 <body>
-    <!---<div th:replace="fragments/topnav :: navbar">
-    </div> -->
-    <!--<div class="topnav">
-        <a href="start.html">Home</a>
-        <a href="members.html">Members</a>
-        <a href="fundraisers.html">Fundraiser</a>
-    </div> -->
-<div th:replace="fragments/topnav :: navbar">
+    <div th:replace="fragments/topnav :: navbar">
 
-</div>
+    </div>
     <br/>
     <!---Todo: needs a DAO -->
     <p>
@@ -29,27 +22,36 @@
     </p>
     <br/>
 
-    <h2>Example Fundraiser Creation Form</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
 
-    <p th:text="${fundraiser}" />
+            </div>
+            <div class="col-md">
+                <h2>Example Fundraiser Creation Form</h2>
 
-    <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
+                <p th:text="${fundraiser}" />
+
+                <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
+                    </div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
+                    </div>
+
+
+                    <button name="submit" type="submit" value="0">Submit</button>
+                </form>
+            </div>
         </div>
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
-        </div>
-        <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
-        </div>
-
-
-        <button name="submit" type="submit" value="0">Submit</button>
-    </form>
+    </div>
 
 </body>
 </html>
