@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class FundraiserManagerController {
+public class FundraiserManagerController extends FundraiserManagerBaseController {
 
     IFundraiserService fundraiserService;
 
@@ -69,9 +69,9 @@ public class FundraiserManagerController {
     }
 
     @DeleteMapping("/fundraiser/{id}/")
-    public ResponseEntity deleteFundraiser(@PathVariable("id") Integer id) {
+    public ResponseEntity deleteFundraiser(@PathVariable("isActive") Boolean isActive) {
         try {
-            fundraiserService.delete(id);
+            fundraiserService.delete(isActive);
             return new ResponseEntity(HttpStatus.OK);
         } catch (Exception e) {
             //TODO confirm correct response in catch, or modify it to be correct response.

@@ -30,7 +30,7 @@ public class FundraiserDAOStub implements IFundraiserDAO{
     }
 
     @Override
-    public void delete(int id) {
-        allFundraisers.remove(id);
+    public void delete(Boolean isActive) {
+        allFundraisers.remove(isActive);
     }
 }
