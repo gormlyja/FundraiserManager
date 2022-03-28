@@ -11,5 +11,5 @@ public interface IFundraiserDAO {
 
     Fundraiser fetch(int id);
 
-    void delete(Boolean isActive);
+    void delete(int id);
 }

@@ -12,7 +12,7 @@ public interface IFundraiserService {
      */
     Fundraiser fetchById(int id);
 
-    void delete(Boolean isActive) throws Exception;
+    void delete(int id) throws Exception;
 
     Fundraiser save(Fundraiser fundraiser) throws Exception;
 
