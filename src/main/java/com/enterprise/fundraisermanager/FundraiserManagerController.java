@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class FundraiserManagerController {
+public class FundraiserManagerController extends FundraiserManagerBaseController {
 
     IFundraiserService fundraiserService;
 
@@ -78,6 +78,20 @@ public class FundraiserManagerController {
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PutMapping("/fundraiser/{id}/")
+    public ResponseEntity deleteFundraiserFormUI(@PathVariable("id") Integer id) {
+        try {
+            Fundraiser fundraiser = fundraiserService.fetchById(id);
+            fundraiser.setIsActive(false);
+            fundraiserService.save(fundraiser);
+            return new ResponseEntity(HttpStatus.OK);
+        } catch (Exception e) {
+            //TODO confirm correct response in catch, or modify it to be correct response.
+            return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
     @GetMapping("/fundraisers")
     public ResponseEntity searchFundraisers(@RequestParam(value = "searchTerm", required = false, defaultValue = "None") String searchTerm) {

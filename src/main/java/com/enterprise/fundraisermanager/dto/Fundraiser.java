@@ -20,4 +20,5 @@ class Fundraiser {
     private Calendar endDate;
     private Double totalFundraised;
     private HashMap<Integer, FundraiserUser> userMap;
+    private Boolean isActive;
 }
