@@ -5,11 +5,11 @@ import com.enterprise.fundraisermanager.dto.Transaction;
 import java.util.List;
 
 public interface ITransactionDAO {
-    Transaction save(Transaction tier) throws Exception;
+    Transaction save(Transaction transaction) throws Exception;
 
     List<Transaction> fetchAll();
 
-    Transaction fetch(int tierId);
+    Transaction fetch(int transactionId);
 
-    void delete(int tierId);
+    void delete(int transactionId);
 }
