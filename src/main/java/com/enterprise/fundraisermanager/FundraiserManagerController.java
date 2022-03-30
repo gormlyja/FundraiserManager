@@ -2,6 +2,7 @@ package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
+import com.enterprise.fundraisermanager.service.TierServiceStub;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -96,7 +97,14 @@ public class FundraiserManagerController {
     }
 
     @RequestMapping("/tiers")
-    public String tiers() {
+    public String saveTiers() {
+        //TODO: Create TierService
         return "tiers";
+    }
+
+    @RequestMapping("/users")
+    public String users() {
+
+        return "users";
     }
 }
