@@ -94,4 +94,9 @@ public class FundraiserManagerController {
 
         return "members";
     }
+
+    @RequestMapping("/tiers")
+    public String tiers() {
+        return "tiers";
+    }
 }
