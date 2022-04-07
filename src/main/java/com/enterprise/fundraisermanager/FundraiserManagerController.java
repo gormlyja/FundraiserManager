@@ -3,7 +3,6 @@ package com.enterprise.fundraisermanager;
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 import com.enterprise.fundraisermanager.dto.User;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
-import com.enterprise.fundraisermanager.service.TierServiceStub;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -113,6 +112,12 @@ public class FundraiserManagerController {
         user.setLastName("Doe");
         user.setEmailAddress("JDoe@gmail.com");
         model.addAttribute(user);
+        return "users";
+    }
+
+    @RequestMapping("/saveUser")
+    public String saveUser(User user) {
+
         return "users";
     }
 }
