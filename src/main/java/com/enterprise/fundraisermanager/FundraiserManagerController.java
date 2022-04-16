@@ -1,8 +1,12 @@
 package com.enterprise.fundraisermanager;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
+import com.enterprise.fundraisermanager.dto.Tier;
 import com.enterprise.fundraisermanager.dto.User;
 import com.enterprise.fundraisermanager.service.IFundraiserService;
+import com.enterprise.fundraisermanager.service.ITierService;
+import com.enterprise.fundraisermanager.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,7 +21,8 @@ import java.util.List;
 public class FundraiserManagerController {
 
     IFundraiserService fundraiserService;
-
+    IUserService userService;
+    ITierService tierService;
     /**
      * Handle the root (/) endpoint and return a start page.
      * @return start page
@@ -97,8 +102,12 @@ public class FundraiserManagerController {
     }
 
     @RequestMapping("/tiers")
-    public String saveTiers() {
-        //TODO: Create TierService
+    public String saveTiers(Tier tier) {
+        try {
+            tierService.saveTier(tier);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "tiers";
     }
 
@@ -117,7 +126,11 @@ public class FundraiserManagerController {
 
     @RequestMapping("/saveUser")
     public String saveUser(User user) {
-
+        try {
+            userService.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return "users";
     }
 }
