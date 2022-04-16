@@ -14,11 +14,10 @@
 
 </head>
 <body>
-     <!-- Connect to service mod.6 vid 3-->
      <p>Register Here</p>
-    <p th:text="${user}"></p>
+     <p th:text="${user}" />
 
-    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="get">
+    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="GET"><br/>
         <label>User ID</label><input type="text" name="userid" th:field="*{userId}"/><br/>
         <label>UserName</label><input type="text" name="username" th:field="*{username}"/><br/>
         <label>Password</label><input type="text" name="password" th:field="*{password}"/><br/>
