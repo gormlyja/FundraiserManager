@@ -2,10 +2,7 @@ package com.enterprise.fundraisermanager.dto;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashMap;
 
 @Entity
@@ -20,4 +17,8 @@ class User {
     private String firstName;
     private String lastName;
     private String emailAddress;
+
+    @ManyToOne
+    @JoinColumn(name="tierID")
+    private Tier tier;
 }

@@ -9,7 +9,7 @@ public interface IUserService {
 
         void delete(int id) throws Exception;
 
-        User save(User user) throws Exception;
+        void save(User user) throws Exception;
 
         List<User> fetchAll();
     }
