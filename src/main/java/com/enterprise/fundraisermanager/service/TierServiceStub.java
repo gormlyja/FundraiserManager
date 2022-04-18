@@ -53,6 +53,16 @@ public class TierServiceStub implements ITierService {
         return tierDAO.fetchAll();
     }
 
+    @Override
+    public void saveTier() throws Exception {
+
+    }
+
+    @Override
+    public void saveTier(Tier tier) throws Exception {
+
+    }
+
     /**
      * Any methods not included in lecture. TODO Remove this later in project
      *
