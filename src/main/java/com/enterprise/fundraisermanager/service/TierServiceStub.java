@@ -62,10 +62,4 @@ public class TierServiceStub implements ITierService {
     public void saveTier(Tier tier) throws Exception {
 
     }
-
-    /**
-     * Any methods not included in lecture. TODO Remove this later in project
-     *
-     * @param fundraiser
-     */
 }

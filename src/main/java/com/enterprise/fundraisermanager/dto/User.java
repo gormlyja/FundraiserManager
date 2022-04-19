@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.HashMap;
 
 @Entity
-@Table (name = "Users")
+@Table (name = "user")
 public @Data
 class User {
     @Id
