@@ -2,6 +2,7 @@ package com.enterprise.fundraisermanager.service;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface IFundraiserService {
@@ -17,4 +18,6 @@ public interface IFundraiserService {
     Fundraiser save(Fundraiser fundraiser) throws Exception;
 
     List<Fundraiser> fetchAll();
+
+    List<Fundraiser> fetchFundraiser(String combinedName) throws IOException;
 }
