@@ -19,3 +19,4 @@
 /target/classes/com/enterprise/fundraisermanager/service/TierServiceStub.class
 /target/classes/com/enterprise/fundraisermanager/dto/Transaction.class
 /target/classes/com/enterprise/fundraisermanager/dto/User.class
+/target/*
