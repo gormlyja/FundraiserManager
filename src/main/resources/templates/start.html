@@ -9,57 +9,100 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div th:replace="fragments/topnav :: navbar">
+<div th:replace="fragments/topnav :: navbar">
 
-    </div>
-    <br/>
-    <!---Todo: needs a DAO -->
-    <p>
-        Welcome to Fundraiser Manager! The Fundraiser Manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about the fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
-    </p>
-    <br/>
+</div>
+<br/>
+<!---Todo: needs a DAO -->
+<p>
+    Welcome to Fundraiser Manager! The Fundraiser Manager allows organizers to set up an online space for their fundraiser. This allows any participants the ability to see information about the fundraiser, compare how much they have sold compared to other participants, and see if / how many rewards they qualify for from the organizers. Organizers are able to edit information about their fundraiser, establish rewards / reward tiers, and edit members and member information.
+</p>
+<br/>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <h2>Fundraisers</h2>
-                <!---Todo: add links -->
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Girls scout Cookies</a>
-                    <a href="#" class="list-group-item list-group-item-action">Pi Delta Tau Fries</a>
-                    <a href="#" class="list-group-item list-group-item-action">Goodwill Donation Drive</a>
-                    <a href="#" class="list-group-item list-group-item-action">Cincinnati Cares Tree Saver Event</a>
-                    <a href="#" class="list-group-item list-group-item-action">Pie Day</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <h2>Fundraisers</h2>
+            <!---Todo: add links -->
+            <div class="accordion">
+                <div>
+                    <input type="checkbox" name="accordion" id="section1" class="accordion__input">
+                    <label for="section1" class="accordion__label">Girls scout Cookies</label>
+                    <div class="accordion__content">
+                        <p>Fundraiser Name: Girls scout Cookies</p>
+                        <p>Fundraiser Description: Small girls from Girls Scout go around town to sell cookies to raise fundraiser for funding events to train them for women empowerment.</p>
+                        <p>Total Funds Raised: $5,700.00</p>
+                    </div>
                 </div>
+                <div>
+                    <input type="checkbox" name="accordion" id="section2" class="accordion__input">
+                    <label for="section2" class="accordion__label">Pi Delta Tau Fries</label>
+                    <div class="accordion__content">
+                        <p>Fundraiser Name: Pi Delta Tau Fries</p>
+                        <p>Fundraiser Description: The Pi Delta Tau Fraternity raise money to donate to a homeless shelter to provide them with warm blankets for the winter.</p>
+                        <p>Total Funds Raised: $4,300.00</p>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="accordion" id="section3" class="accordion__input">
+                    <label for="section3" class="accordion__label">Goodwill Donation Drive</label>
+                    <div class="accordion__content">
+                        <p>Fundraiser Name: Goodwill Donation Drive</p>
+                        <p>Fundraiser Description: The Goodwill Foundation collects donations to buy warm and quality clothes for those in need.</p>
+                        <p>Total Funds Raised: $7,700.00</p>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="accordion" id="section4" class="accordion__input">
+                    <label for="section4" class="accordion__label">Cincinnati Cares Tree Saver Event</label>
+                    <div class="accordion__content">
+                        <p>Fundraiser Name: Cincinnati Cares Tree Saver Event</p>
+                        <p>Fundraiser Description: The Cincinnati Cares collects donations in order to buy tools for volunteers to do tree plantations as well as cut off invasive species.</p>
+                        <p>Total Funds Raised: $6,400.00</p>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="accordion" id="section5" class="accordion__input">
+                    <label for="section5" class="accordion__label">Pie Day</label>
+                    <div class="accordion__content">
+                        <p>Fundraiser Name: Pie Day</p>
+                        <p>Fundraiser Description: The Pie Cake Organization organize a pie selling event where they sell pies to collect funds to donate to an orphanage.</p>
+                        <p>Total Funds Raised: $3,450.00</p>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="col-md">
-                <h2>Example Fundraiser Creation Form</h2>
 
-                <p th:text="${fundraiser}" />
+        </div>
+        <div class="col-md">
+            <h2>Example Fundraiser Creation Form</h2>
 
-                <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
-                    </div>
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
-                    </div>
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
-                    </div>
+            <p th:text="${fundraiser}" />
+
+            <form action="#" th:action="@{/saveFundraiser}" th:object="${fundraiser}" method="GET">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="fundraiserName">Fundraiser Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "fundraiserName" th:field="*{name}">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="fundraiserDescription">Fundraiser Description</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "description" th:field="*{description}">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="totalFundsRaised">Total Funds Raised</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name = "totalFundsRaised" th:field="*{totalFundraised}">
+                </div>
 
 
-                    <button name="submit" type="submit" value="0">Submit</button>
-                </form>
-            </div>
+                <button name="submit" type="submit" value="0">Submit</button>
+            </form>
         </div>
     </div>
+</div>
 
 </body>
 </html>
