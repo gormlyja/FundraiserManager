@@ -1,21 +1,20 @@
 package com.enterprise.fundraisermanager.dao;
 
 import com.enterprise.fundraisermanager.dto.Fundraiser;
-import com.enterprise.fundraisermanager.dto.Tier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("fundraiserSQLDAO")
-public class FundraiserSQLDAO implements ITierDAO{
+public class FundraiserSQLDAO implements IFundraiserDAO{
 
     @Autowired
     FundraiserRepository fundraiserRepository;
 
     @Override
-    public Tier save(Tier tier) throws Exception {
-        Fundraiser createdFundraiser = fundraiserRepository.save(tier);
+    public Fundraiser save(Fundraiser fundraiser) throws Exception {
+        Fundraiser createdFundraiser = fundraiserRepository.save(fundraiser);
         return createdFundraiser;
     }
 
